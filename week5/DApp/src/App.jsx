@@ -11,10 +11,13 @@ import ShowBalance from "./components/Showbalance";
 import { Toaster } from "react-hot-toast";
 import SignMessage from "./components/SignMessage";
 
+
+const endpoint = import.meta.env.VITE_SOLANA_RPC;
+
 function App() {
   return (
     <div className="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white w-screen min-h-screen flex justify-center items-center px-4 py-6">
-      <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/XdDmmiqi8Z1fyMtwOhqwJ"}>
+      <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={[]} autoConnect>
           <WalletModalProvider>
             <div className="w-full max-w-lg bg-gray-900 rounded-2xl shadow-xl p-6 sm:p-8 border border-gray-700 flex flex-col gap-6 sm:gap-8">
