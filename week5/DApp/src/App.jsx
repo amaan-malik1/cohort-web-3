@@ -10,6 +10,7 @@ import Airdrop from "./components/Airdrop";
 import ShowBalance from "./components/Showbalance";
 import { Toaster } from "react-hot-toast";
 import SignMessage from "./components/SignMessage";
+import { SendToken } from "./components/SendTOken";
 
 
 const endpoint = import.meta.env.VITE_SOLANA_RPC;
@@ -40,6 +41,9 @@ function App() {
 
               {/* Airdrop Section */}
               <Airdrop />
+
+              {/* send token */}
+              <SendToken />
 
               <SignMessage />
             </div>

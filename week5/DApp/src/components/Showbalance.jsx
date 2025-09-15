@@ -3,8 +3,8 @@ import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 
 function ShowBalance() {
-    const { connection } = useConnection();
     const wallet = useWallet();
+    const { connection } = useConnection();
 
 
     async function getBalance() {

@@ -15,7 +15,7 @@ function Airdrop() {
             return;
         }
 
-        const value = parseFloat(airdropInput.current.value);
+        const value = airdropInput.current.value;
         if (!value || value <= 0) {
             toast.error("Enter a valid SOL amount!");
             return;
@@ -23,11 +23,14 @@ function Airdrop() {
 
         try {
             setLoading(true);
-            const sig = await connection.requestAirdrop(
-                wallet.publicKey,
+            const publicKey = wallet.publicKey;
+            const res = await connection.requestAirdrop(
+                publicKey,
                 value * 1000000000
             );
-            toast.success(`Airdrop requested! Tx: ${sig.slice(0, 10)}...`);
+            // console.log(res);
+            toast.success(`Airdrop requested! Tx: ${res.slice(0, 10)}...`);
+            
         } catch (err) {
             console.error(err);
             toast.error("Airdrop failed. Try again!");
@@ -66,6 +69,7 @@ function Airdrop() {
                             ? "bg-gray-600 cursor-not-allowed"
                             : "bg-blue-600 hover:bg-blue-700 hover:shadow-yellow-400"
                         }`}
+
                     onClick={handleAirdrop}
                 >
                     {loading ? "Requesting..." : "Get Airdrop"}
@@ -75,7 +79,7 @@ function Airdrop() {
             </div>
 
             {/* sign messaage */}
-           
+
         </div>
     );
 }
