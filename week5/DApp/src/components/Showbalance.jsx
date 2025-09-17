@@ -6,7 +6,6 @@ function ShowBalance() {
     const wallet = useWallet();
     const { connection } = useConnection();
 
-
     async function getBalance() {
         if (wallet.publicKey) {
             const balance = await connection.getBalance(wallet.publicKey);
