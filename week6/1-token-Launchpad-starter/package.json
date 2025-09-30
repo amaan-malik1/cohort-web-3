@@ -17,6 +17,8 @@
     "@solana/wallet-adapter-wallets": "^0.19.37",
     "@solana/web3.js": "^1.98.4",
     "dotenv": "^17.2.2",
+    "framer": "^2.4.1",
+    "motion": "^12.23.15",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-hot-toast": "^2.6.0",
