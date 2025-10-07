@@ -15,7 +15,7 @@ export function SendToken() {
             const amount = document.getElementById("amount").value.trim();
 
             if (!recipientAdd || !amount) {
-                alert("Please enter recipient and amount");
+                alert("All fields are required!");
                 return;
             }
 
